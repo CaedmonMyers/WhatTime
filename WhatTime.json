@@ -1,0 +1,19 @@
+{
+    "fileName": "WhatTime.json",
+    "name": "WhatTime",
+    "version": "0.1.0",
+    "uuid": "2C0B26E9-47AA-4C55-B235-640C45ECAD33",
+    "mavenUrls": [
+        "https://jitpack.io"
+    ],
+    "jsonUrl": "",
+    "javaDependencies": [
+        {
+            "groupId": "com.github.caedmonmyers",
+            "artifactId": "WhatTime",
+            "version": "0.1.0"
+        }
+    ],
+    "jniDependencies": [],
+    "cppDependencies": []
+}

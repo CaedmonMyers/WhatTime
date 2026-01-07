@@ -6,10 +6,10 @@
     "mavenUrls": [
         "https://jitpack.io"
     ],
-    "jsonUrl": "",
+    "jsonUrl": "https://raw.githubusercontent.com/CaedmonMyers/WhatTime/refs/heads/main/WhatTime.json",
     "javaDependencies": [
         {
-            "groupId": "com.github.caedmonmyers",
+            "groupId": "com.github.CaedmonMyers",
             "artifactId": "WhatTime",
             "version": "0.1.0"
         }

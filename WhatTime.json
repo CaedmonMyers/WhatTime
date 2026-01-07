@@ -2,9 +2,10 @@
     "fileName": "WhatTime.json",
     "name": "WhatTime",
     "version": "0.1.0",
+    "frcYear": 2025,
     "uuid": "2C0B26E9-47AA-4C55-B235-640C45ECAD33",
     "mavenUrls": [
-        "https://jitpack.io"
+        "https://jitpack.io/"
     ],
     "jsonUrl": "https://raw.githubusercontent.com/CaedmonMyers/WhatTime/refs/heads/main/WhatTime.json",
     "javaDependencies": [

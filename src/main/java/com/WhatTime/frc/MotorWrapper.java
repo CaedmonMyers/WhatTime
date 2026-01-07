@@ -11,6 +11,11 @@ public class MotorWrapper {
         this.inverted = inverted;
     }
 
+    // This method adds the option of using the .of() method instead of creating a new object.
+    public static MotorWrapper of(TalonFX motor, boolean inverted) {
+        return new MotorWrapper(motor, inverted);
+    }
+
     public void set(double speed) {
         double actualSpeed = inverted ? -speed : speed;
         motor.set(actualSpeed);
@@ -20,6 +25,8 @@ public class MotorWrapper {
         return motor;
     }
 
+    // Checks if the motor object is inverted or not.
+    // This determines the direction it will rotate for some other classes.
     public boolean isInverted() {
         return inverted;
     }

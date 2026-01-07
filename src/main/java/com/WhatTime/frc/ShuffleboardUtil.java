@@ -2,6 +2,7 @@ package com.WhatTime.frc;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
+// This class provides a simple way to put information to Shuffleboard
 public class ShuffleboardUtil {
     // Method for numbers
     public static void put(String key, double value) {

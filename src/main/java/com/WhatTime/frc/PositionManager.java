@@ -34,7 +34,6 @@ public class PositionManager extends Command {
         this.currentAngleSupplier = currentAngleSupplier;
     }
     
-
     private boolean isFinishedToggle = false;
 
     @Override

@@ -12,7 +12,7 @@ public class PositionManager extends Command {
     private final double motorSpeed;
     private final double holdSpeed;
     private final double threshold;
-    private final Supplier<Double> currentAngleSupplier;
+    private final Supplier<Double> currentValueSupplier;
 
     public PositionManager(
         double minValue,
@@ -22,7 +22,7 @@ public class PositionManager extends Command {
         double motorSpeed,
         double holdSpeed,
         double threshold,
-        Supplier<Double> currentAngleSupplier
+        Supplier<Double> currentValueSupplier
     ) {
         this.minValue = minValue;
         this.maxValue = maxValue;
@@ -31,7 +31,7 @@ public class PositionManager extends Command {
         this.motorSpeed = motorSpeed;
         this.holdSpeed = holdSpeed;
         this.threshold = threshold;
-        this.currentAngleSupplier = currentAngleSupplier;
+        this.currentValueSupplier = currentValueSupplier;
     }
     
     private boolean isFinishedToggle = false;
@@ -47,30 +47,46 @@ public class PositionManager extends Command {
     }
 
     private void updateMotorSpeed() {
-        double currentAngle = currentAngleSupplier.get();
+        double currentValue = currentValueSupplier.get();
 
-        // Within threshold of target. Terminates command.
-        if (Math.abs(currentAngle - targetValue) <= threshold) {
+        // 1. Within threshold of target. Terminates command.
+        if (Math.abs(currentValue - targetValue) <= threshold) {
             setAllMotors(0.0);
             isFinishedToggle = true;
             return;
         }
 
-        if (currentAngle > targetValue) {
-            // At or below lower limit. Cannot move down more.
-            if (currentAngle <= minValue) {
-                setAllMotors(0.0);
-                return;
+        boolean needToMoveUp = currentValue < targetValue;
+        boolean needToMoveDown = currentValue > targetValue;
+
+        // 2. At or above upper limit. Move down only.
+        if (currentValue >= maxValue) {
+            if (needToMoveDown) {
+                setAllMotors(-motorSpeed);
+            } else {
+                // Want to move up but at max limit. Stop and finish
+                setAllMotors(holdSpeed);
+                isFinishedToggle = true;
             }
-            // Moving down
+            return;
+        }
+
+        // 3. At or below lower limit. Move up only.
+        if (currentValue <= minValue) {
+            if (needToMoveUp) {
+                setAllMotors(motorSpeed);
+            } else {
+                // Want to move down but at min limit - stop and finish
+                setAllMotors(holdSpeed);
+                isFinishedToggle = true;
+            }
+            return;
+        }
+
+        // 4. Within normal range. Move toward target.
+        if (needToMoveDown) {
             setAllMotors(-motorSpeed);
         } else {
-            // At or above upper limit. Cannot move up more.
-            if (currentAngle >= maxValue) {
-                setAllMotors(0.0);
-                return;
-            }
-            // Moving up
             setAllMotors(motorSpeed);
         }
     }

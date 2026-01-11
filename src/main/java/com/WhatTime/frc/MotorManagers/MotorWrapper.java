@@ -1,6 +1,7 @@
-package com.WhatTime.frc;
+package com.WhatTime.frc.MotorManagers;
 
 import com.ctre.phoenix6.hardware.TalonFX;
+import com.ctre.phoenix6.signals.NeutralModeValue;
 
 public class MotorWrapper {
     private final TalonFX motor;
@@ -29,5 +30,9 @@ public class MotorWrapper {
     // This determines the direction it will rotate for some other classes.
     public boolean isInverted() {
         return inverted;
+    }
+
+    public double getPosition() {
+        return motor.get();
     }
 }

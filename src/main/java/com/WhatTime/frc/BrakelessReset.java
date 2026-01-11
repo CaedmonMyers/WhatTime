@@ -2,6 +2,7 @@ package com.WhatTime.frc;
 
 import java.util.List;
 
+import com.WhatTime.frc.MotorManagers.MotorWrapper;
 import com.ctre.phoenix6.signals.NeutralModeValue;
 
 import edu.wpi.first.wpilibj.Timer;

@@ -1,5 +1,7 @@
 package com.WhatTime.frc;
 
+import com.WhatTime.frc.MotorManagers.MotorWrapper;
+
 // This class creates a pair of motors that act as a group
 // It is mainly designed to be used in a dual motor system for grabbing things.
 public class FlywheelPair {

@@ -4,6 +4,8 @@ import edu.wpi.first.wpilibj2.command.Command;
 import java.util.List;
 import java.util.function.Supplier;
 
+import com.WhatTime.frc.MotorManagers.MotorWrapper;
+
 public class PositionManager extends Command {
     private final double minValue;
     private final double maxValue;

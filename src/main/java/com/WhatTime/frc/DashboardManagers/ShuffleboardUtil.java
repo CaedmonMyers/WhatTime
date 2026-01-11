@@ -1,4 +1,4 @@
-package com.WhatTime.frc;
+package com.WhatTime.frc.DashboardManagers;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 

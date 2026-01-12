@@ -3,7 +3,7 @@ plugins {
   id 'maven-publish'
 }
 
-group = 'com.1209robohornets.WhatTime.frc'
+group = 'com.1209btwrobotics.robohornets.WhatTime.frc'
 version = '1.0.0'
 
 java {

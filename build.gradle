@@ -20,9 +20,7 @@ dependencies {
     implementation "edu.wpi.first.wpiutil:wpiutil-java:2026.1.1"
     implementation "edu.wpi.first.wpilibj:wpilibj-java:2026.1.1"
     implementation "edu.wpi.first.wpilibNewCommands:wpilibNewCommands-java:2026.1.1"
-    implementation "com.ctre.phoenix6:wpiapi-java:26.1.1"
-    implementation 'edu.wpi.first.ntcore:ntcore-java:2026.1.1'
-    implementation 'edu.wpi.first.networktables:networktables-java:2026.1.1'
+    implementation "com.ctre.phoenix6:wpiapi-java:26.1.0"
 }
 
 publishing {

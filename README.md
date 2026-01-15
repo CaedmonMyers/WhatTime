@@ -1,5 +1,5 @@
 # A Package by FRC team 1209
-[![](https://jitpack.io/v/CaedmonMyers/WhatTime.svg)](https://jitpack.io/#CaedmonMyers/WhatTime)
+[![](https://jitpack.io/v/robohornets/WhatTime.svg)](https://jitpack.io/#robohornets/WhatTime)
 
 This package contains several helpful functions for frc robots that use TalonFX motors.
 

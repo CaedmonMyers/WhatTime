@@ -18,7 +18,6 @@ public class NetworkTablesUtil {
         inst.getTable(DEFAULT_TABLE).getEntry(key).setString(value);
     }
 
-
     // Method for booleans
     public static void put(String key, boolean value) {
         inst.getTable(DEFAULT_TABLE).getEntry(key).setBoolean(value);
@@ -31,8 +30,7 @@ public class NetworkTablesUtil {
         } else if (value instanceof Boolean) {
             inst.getTable(DEFAULT_TABLE).getEntry(key).setBoolean((Boolean) value);
         } else {
-            // Dont convert other general objects to strings, corrupts most datatypes
-            inst.getTable(DEFAULT_TABLE).getEntry(key).setValue(value);
+            inst.getTable(DEFAULT_TABLE).getEntry(key).setString(value.toString());
         }
     }
     

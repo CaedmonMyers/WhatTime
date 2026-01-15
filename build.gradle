@@ -1,0 +1,35 @@
+plugins {
+  id 'java-library'
+  id 'maven-publish'
+}
+
+group = 'com.btwrobotics.WhatTime.frc'
+version = '1.0.0'
+
+java {
+  toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+}
+
+repositories {
+    mavenCentral()
+    maven { url = uri('https://frcmaven.wpi.edu/artifactory/release/') }
+    maven { url = uri('https://maven.ctr-electronics.com/release/') }
+}
+
+dependencies {
+    implementation "edu.wpi.first.wpiutil:wpiutil-java:2026.1.1"
+    implementation "edu.wpi.first.wpilibj:wpilibj-java:2026.1.1"
+    implementation "edu.wpi.first.wpilibNewCommands:wpilibNewCommands-java:2026.1.1"
+    implementation "edu.wpi.first.ntcore:ntcore-java:2026.1.1"
+    implementation "edu.wpi.first.wpimath:wpimath-java:2026.1.1"
+    implementation "edu.wpi.first.wpiunits:wpiunits-java:2026.1.1"
+    implementation "com.ctre.phoenix6:wpiapi-java:26.1.0"
+}
+
+publishing {
+  publications {
+    mavenJava(MavenPublication) {
+      from components.java
+    }
+  }
+}

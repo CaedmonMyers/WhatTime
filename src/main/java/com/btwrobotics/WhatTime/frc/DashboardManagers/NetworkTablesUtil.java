@@ -26,14 +26,8 @@ public class NetworkTablesUtil {
 
     // Method for generic objects
     public static void put(String key, Object value) {
-        if (value instanceof Number) {
-            inst.getTable(DEFAULT_TABLE).getEntry(key).setDouble(((Number) value).doubleValue());
-        } else if (value instanceof Boolean) {
-            inst.getTable(DEFAULT_TABLE).getEntry(key).setBoolean((Boolean) value);
-        } else {
-            // Dont convert other general objects to strings, corrupts most datatypes
-            inst.getTable(DEFAULT_TABLE).getEntry(key).setValue(value);
-        }
+        // Dont convert other general objects to strings, corrupts most datatypes
+        inst.getTable(DEFAULT_TABLE).getEntry(key).setValue(value);
     }
     
     // Overloaded methods to specify a custom table

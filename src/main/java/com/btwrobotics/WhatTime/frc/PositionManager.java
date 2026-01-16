@@ -1,11 +1,9 @@
 package com.btwrobotics.WhatTime.frc;
 
 import edu.wpi.first.wpilibj2.command.Command;
-import edu.wpi.first.wpilibj2.command.Commands;
 
 import java.util.List;
 import java.util.function.Supplier;
-import com.btwrobotics.WhatTime.frc.RunUntil;
 
 import com.btwrobotics.WhatTime.frc.MotorManagers.MotorWrapper;
 
@@ -49,7 +47,7 @@ public class PositionManager {
     public Command move(double target) {
         this.targetValue = target;
         this.isFinishedToggle = false;
-        
+
         RunUntil runUntil = new RunUntil(() -> this.isFinished(), () -> this.updateMotorSpeed());
         // is this the correct usage?
 

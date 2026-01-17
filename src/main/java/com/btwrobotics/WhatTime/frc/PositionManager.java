@@ -1,6 +1,7 @@
 package com.btwrobotics.WhatTime.frc;
 
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.Commands;
 
 import java.util.List;
 import java.util.function.Supplier;
@@ -16,6 +17,7 @@ public class PositionManager {
     private final double threshold;
     private final Supplier<Double> currentValueSupplier;
     
+
     private double targetValue;
     
     public PositionManager(
@@ -48,10 +50,9 @@ public class PositionManager {
         this.targetValue = target;
         this.isFinishedToggle = false;
 
-        RunUntil runUntil = new RunUntil(() -> this.isFinished(), () -> this.updateMotorSpeed());
-        // is this the correct usage?
-
-        return runUntil;
+        return Commands.run(() -> {
+            updateMotorSpeed();
+        });
     }
 
     public double getTarget() {

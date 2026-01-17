@@ -57,4 +57,14 @@ public class NetworkTablesUtil {
     public static void put(String table, String key, boolean value) {
         inst.getTable(table).getEntry(key).setBoolean(value);
     }
+
+    public static void put(String table, String key, Object value) {
+        if (value instanceof Number) {
+            inst.getTable(DEFAULT_TABLE).getEntry(key).setDouble(((Number) value).doubleValue());
+        } else if (value instanceof Boolean) {
+            inst.getTable(DEFAULT_TABLE).getEntry(key).setBoolean((Boolean) value);
+        } else {
+            inst.getTable(DEFAULT_TABLE).getEntry(key).setString(value.toString());
+        }
+    }
 }

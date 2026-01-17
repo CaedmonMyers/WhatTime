@@ -52,6 +52,7 @@ public class PositionManager {
         });
     }
 
+    
     public double getTarget() {
         return targetValue;
     }

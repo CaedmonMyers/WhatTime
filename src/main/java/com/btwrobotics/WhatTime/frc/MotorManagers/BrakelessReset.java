@@ -1,8 +1,7 @@
-package com.btwrobotics.WhatTime.frc;
+package com.btwrobotics.WhatTime.frc.MotorManagers;
 
 import java.util.List;
 
-import com.btwrobotics.WhatTime.frc.MotorManagers.MotorWrapper;
 import com.ctre.phoenix6.signals.NeutralModeValue;
 
 import edu.wpi.first.wpilibj.Timer;

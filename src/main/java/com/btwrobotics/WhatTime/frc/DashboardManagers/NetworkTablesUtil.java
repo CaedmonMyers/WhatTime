@@ -1,5 +1,6 @@
 package com.btwrobotics.WhatTime.frc.DashboardManagers;
 
+import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableInstance;
 
 // This class provides a simple way to put information directly to NetworkTables
@@ -10,13 +11,13 @@ public class NetworkTablesUtil {
 
 
     // Method to get
-    public static Object get(String key) {
-        return inst.getTable(DEFAULT_TABLE).getEntry(key).getValue();
+    public static NetworkTable getTable() {
+        return inst.getTable(DEFAULT_TABLE);
     }
 
     // Method to get from specific table
-    public static Object get(String table, String key) {
-        return inst.getTable(table).getEntry(key).getValue();
+    public static NetworkTable getTable(String table) {
+        return inst.getTable(table);
     }
     
     // Method for numbers
